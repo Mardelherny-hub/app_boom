@@ -45,8 +45,8 @@ class ServiceController extends Controller
         }
         
         // Handle icon upload
-        if ($request->hasFile('icon')) {
-            $service->addMediaFromRequest('icon')->toMediaCollection('icon');
+        if ($request->hasFile('icon_file')) {
+            $service->addMediaFromRequest('icon_file')->toMediaCollection('icon');
         }
          // Limpiar cache
 
@@ -70,9 +70,7 @@ class ServiceController extends Controller
     }
 
     public function update(UpdateServiceRequest $request, int $id)
-    {
-       
-
+    {    
         $service = $this->serviceCrudService->findOrFail($id);
         $this->serviceCrudService->update($service, $request->validated());
         
@@ -85,11 +83,11 @@ class ServiceController extends Controller
         }
         
         // Handle icon upload - SIN CLEAR
-        if ($request->hasFile('icon')) {
+        if ($request->hasFile('icon_file')) {
             // Eliminar icono anterior si existe
-            $service->getMedia('icon')->each->delete();
+            $service->getMedia('icon_file')->each->delete();
             // Agregar nuevo
-            $service->addMediaFromRequest('icon')->toMediaCollection('icon');
+            $service->addMediaFromRequest('icon_file')->toMediaCollection('icon');
         }
 
         return redirect()

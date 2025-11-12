@@ -8,14 +8,14 @@
                 @method('PUT')
 
                 <x-admin.form-input
-                    label="Name"
+                    :label="__('Name')"
                     name="name"
                     :value="$user->name"
                     required
                 />
 
                 <x-admin.form-input
-                    label="Email"
+                    :label="__('Email')"
                     name="email"
                     type="email"
                     :value="$user->email"
@@ -23,27 +23,27 @@
                 />
 
                 <x-admin.form-input
-                    label="Phone"
+                    :label="__('Phone')"
                     name="phone"
                     type="tel"
                     :value="$user->phone"
                 />
 
                 <x-admin.form-input
-                    label="Password"
+                    :label="__('Password')"
                     name="password"
                     type="password"
                     placeholder="Leave blank to keep current password"
                 />
 
                 <x-admin.form-input
-                    label="Confirm Password"
+                    :label="__('Confirm Password')"
                     name="password_confirmation"
                     type="password"
                 />
 
                 <x-admin.form-select
-                    label="Role"
+                    :label="__('Role')"
                     name="role"
                     required
                 >
@@ -55,7 +55,7 @@
                 </x-admin.form-select>
 
                 <x-admin.form-textarea
-                    label="Bio"
+                    :label="__('Bio')"
                     name="bio"
                     :value="$user->bio"
                     rows="3"
@@ -63,11 +63,11 @@
 
                 <div class="flex space-x-3">
                     <x-admin.button type="submit" variant="primary">
-                        Update User
+                        {{ __('Update User') }}
                     </x-admin.button>
 
                     <a href="{{ route('admin.users.index') }}" class="inline-flex items-center px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-lg text-sm font-medium transition">
-                        Cancel
+                        {{ __('Cancel') }}
                     </a>
 
                     @if($user->id !== auth()->id())
@@ -75,7 +75,7 @@
                             @csrf
                             @method('DELETE')
                             <x-admin.button type="submit" variant="danger">
-                                Delete User
+                                {{ __('Delete User') }}
                             </x-admin.button>
                         </form>
                     @endif

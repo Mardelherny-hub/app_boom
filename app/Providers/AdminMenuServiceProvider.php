@@ -15,14 +15,14 @@ class AdminMenuServiceProvider extends ServiceProvider
     protected function registerMenuItems(): void
     {
         MenuRegistry::register('dashboard', [
-            'label' => 'Dashboard',
+            'label' => 'Inicio',
             'route' => 'admin.dashboard',
             'icon' => 'heroicon-o-home',
             'order' => 1,
         ]);
 
         MenuRegistry::register('users', [
-            'label' => 'Users',
+            'label' => 'Usuarios',
             'route' => 'admin.users.index',
             'icon' => 'heroicon-o-users',
             'permission' => 'users.view',
@@ -30,7 +30,7 @@ class AdminMenuServiceProvider extends ServiceProvider
         ]);
 
         MenuRegistry::register('services', [
-            'label' => 'Services',
+            'label' => 'Servicios',
             'route' => 'admin.services.index',
             'icon' => 'heroicon-o-briefcase',
             'permission' => 'services.view',
@@ -45,11 +45,11 @@ class AdminMenuServiceProvider extends ServiceProvider
             'order' => 30,
             'children' => [
                 [
-                    'label' => 'Projects',
+                    'label' => 'Proyectos',
                     'route' => 'admin.projects.index',
                 ],
                 [
-                    'label' => 'Categories',
+                    'label' => 'Categorías',
                     'route' => 'admin.project-categories.index',
                 ],
             ],
@@ -63,18 +63,18 @@ class AdminMenuServiceProvider extends ServiceProvider
             'order' => 40,
             'children' => [
                 [
-                    'label' => 'Posts',
+                    'label' => 'Artículos',
                     'route' => 'admin.posts.index',
                 ],
                 [
-                    'label' => 'Categories',
+                    'label' => 'Categorías',
                     'route' => 'admin.post-categories.index',
                 ],
             ],
         ]);
 
         MenuRegistry::register('pages', [
-            'label' => 'Pages',
+            'label' => 'Páginas',
             'route' => 'admin.pages.index',
             'icon' => 'heroicon-o-document-text',
             'permission' => 'pages.view',
@@ -82,7 +82,7 @@ class AdminMenuServiceProvider extends ServiceProvider
         ]);
 
         MenuRegistry::register('messages', [
-            'label' => 'Messages',
+            'label' => 'Mensajes',
             'route' => 'admin.messages.index',
             'icon' => 'heroicon-o-envelope',
             'permission' => 'messages.view',
@@ -90,7 +90,7 @@ class AdminMenuServiceProvider extends ServiceProvider
         ]);
 
         MenuRegistry::register('settings', [
-            'label' => 'Settings',
+            'label' => 'Configuración',
             'route' => 'admin.settings.index',
             'icon' => 'heroicon-o-cog',
             'permission' => 'settings.view',

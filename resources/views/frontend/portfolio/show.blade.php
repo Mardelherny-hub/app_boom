@@ -67,10 +67,10 @@
     </section>
 
     {{-- Featured Image --}}
-    @if($project->getFirstMediaUrl('featured'))
+    @if($project->getFirstMediaUrl('featured_image'))
     <section class="py-12 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <img src="{{ $project->getFirstMediaUrl('featured') }}" 
+            <img src="{{ $project->getFirstMediaUrl('featured_image') }}" 
                  alt="{{ $project->title }}"
                  class="w-full rounded-2xl shadow-2xl">
         </div>
@@ -131,8 +131,8 @@
                     <a href="{{ route('portfolio.show', $relatedProject->slug) }}" 
                        class="relative aspect-square bg-gradient-to-br {{ $gradient }} rounded-2xl overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-300 shadow-lg">
                         
-                        @if($relatedProject->getFirstMediaUrl('featured'))
-                            <img src="{{ $relatedProject->getFirstMediaUrl('featured') }}" 
+                        @if($relatedProject->getFirstMediaUrl('featured_image'))
+                            <img src="{{ $relatedProject->getFirstMediaUrl('featured_image') }}" 
                                  alt="{{ $relatedProject->title }}"
                                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         @endif

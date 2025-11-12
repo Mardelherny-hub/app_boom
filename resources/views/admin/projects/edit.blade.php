@@ -3,7 +3,7 @@
 
     <div class="max-w-4xl">
         <div class="bg-white rounded-lg shadow p-6">
-            <form method="POST" action="{{ route('admin.projects.update', $project->id) }}"" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.projects.update', $project->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -70,31 +70,19 @@
                             @foreach($project->getMedia('gallery') as $media)
                                 <div class="relative">
                                     <img src="{{ $media->getUrl() }}" alt="" class="h-24 w-full object-cover rounded border">
-                                    <button type="button" onclick="if(confirm('Delete this image?')) document.getElementById('delete-media-{{ $media->id }}').submit();" class="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 hover:bg-red-600">
+                                    <button type="button" 
+                                            onclick="if(confirm('Delete this image?')) document.getElementById('delete-media-{{ $media->id }}').submit();" 
+                                            class="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 hover:bg-red-600">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                         </svg>
                                     </button>
-                                    <form id="delete-media-{{ $media->id }}" action="{{ route('admin.projects.media.delete', [$project->id, $media->id]) }}" method="POST" style="display:none;">
-                                        @csrf
-                                        @method('DELETE')
-                                    </form>
                                 </div>
                             @endforeach
                         </div>
                     @endif
                     
-                    <input 
-                        type="file" 
-                        name="gallery[]" 
-                        multiple
-                        accept="image/jpeg,image/png,image/jpg,image/webp"
-                        class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
-                    >
-                    <p class="mt-1 text-xs text-gray-500">Add more images to gallery</p>
-                    @error('gallery')
-                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                    @enderror
+                    <input type="file" name="gallery[]" multiple accept="image/*" class="...">
                 </div>
 
                 <x-admin.form-input
@@ -125,19 +113,17 @@
 
                     <a href="{{ route('admin.projects.index') }}" class="inline-flex items-center px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-lg text-sm font-medium transition">
                         Cancel
-                    </a>
-
-                    
+                    </a>                   
                 </div>
             </form>
 
             <form method="POST" action="{{ route('admin.projects.destroy', $project->id) }}" onsubmit="return confirm('Are you sure?')" class="mt-4">
-                        @csrf
-                        @method('DELETE')
-                        <x-admin.button type="submit" variant="danger">
-                            Delete Project
-                        </x-admin.button>
-                    </form>
+                @csrf
+                @method('DELETE')
+                <x-admin.button type="submit" variant="danger">
+                    Delete Project
+                </x-admin.button>
+            </form>
         </div>
     </div>
 </x-admin-layout>

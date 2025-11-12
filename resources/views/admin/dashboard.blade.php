@@ -13,35 +13,35 @@
                 
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6">
-                        <div class="text-sm text-gray-500">Users</div>
+                        <div class="text-sm text-gray-500">{{ __('Users') }}</div>
                         <div class="text-2xl font-bold">{{ $stats['users'] }}</div>
                     </div>
                 </div>
 
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6">
-                        <div class="text-sm text-gray-500">Services</div>
+                        <div class="text-sm text-gray-500">{{ __('Services') }}</div>
                         <div class="text-2xl font-bold">{{ $stats['services'] }}</div>
                     </div>
                 </div>
 
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6">
-                        <div class="text-sm text-gray-500">Projects</div>
+                        <div class="text-sm text-gray-500">{{ __('Projects') }}</div>
                         <div class="text-2xl font-bold">{{ $stats['projects'] }}</div>
                     </div>
                 </div>
 
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6">
-                        <div class="text-sm text-gray-500">Posts</div>
+                        <div class="text-sm text-gray-500">{{ __('Unread Messages') }}</div>
                         <div class="text-2xl font-bold">{{ $stats['posts'] }}</div>
                     </div>
                 </div>
 
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6">
-                        <div class="text-sm text-gray-500">Unread Messages</div>
+                        <div class="text-sm text-gray-500">{{ __('Unread Messages') }}</div>
                         <div class="text-2xl font-bold text-red-600">{{ $stats['unread_messages'] }}</div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 {{-- Recent Posts --}}
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-4">Recent Posts</h3>
+                        <h3 class="text-lg font-semibold mb-4">{{ __('Unread Messages') }}</h3>
                         <div class="space-y-3">
                             @forelse($recentPosts as $post)
                                 <div class="border-b pb-2">
@@ -64,7 +64,7 @@
                                     <div class="text-xs text-gray-500">{{ $post->created_at->diffForHumans() }}</div>
                                 </div>
                             @empty
-                                <p class="text-gray-500">No posts yet.</p>
+                                <p class="text-gray-500">{{ __('Unread Messages') }}</p>
                             @endforelse
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                             @empty
-                                <p class="text-gray-500">No messages yet.</p>
+                                <p class="text-gray-500">{{ __('Unread Messages') }}.</p>
                             @endforelse
                         </div>
                     </div>

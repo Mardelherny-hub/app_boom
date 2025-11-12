@@ -20,7 +20,7 @@ class StoreServiceRequest extends FormRequest
             'content' => 'nullable|string',
             'icon' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
-            'icon_file' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
+            'icon_file' => 'nullable|file|mimes:jpeg,png,jpg,svg,webp|max:1024',
             'featured' => 'boolean',
             'order' => 'integer|min:0',
             'published_at' => 'nullable|date',

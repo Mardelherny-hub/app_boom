@@ -7,6 +7,7 @@ use App\Domain\Settings\Services\SettingsCacheService;
 use App\Support\Settings\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 
 class SettingController extends Controller
 {

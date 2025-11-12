@@ -180,8 +180,8 @@
                     <a href="{{ route('portfolio.show', $project->slug) }}" 
                        class="relative aspect-square bg-gradient-to-br {{ $gradient }} rounded-lg overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-2xl">
                         
-                        @if($project->getFirstMediaUrl('featured'))
-                            <img src="{{ $project->getFirstMediaUrl('featured') }}" 
+                        @if($project->getFirstMediaUrl('featured_image'))
+                            <img src="{{ $project->getFirstMediaUrl('featured_image') }}" 
                                  alt="{{ $project->title }}"
                                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         @endif
@@ -226,9 +226,9 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($posts as $post)
                 <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-                    @if($post->getFirstMediaUrl('featured'))
+                    @if($post->getFirstMediaUrl('featured_image'))
                         <div class="aspect-video overflow-hidden">
-                            <img src="{{ $post->getFirstMediaUrl('featured') }}" 
+                            <img src="{{ $post->getFirstMediaUrl('featured_image') }}" 
                                  alt="{{ $post->title }}"
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>

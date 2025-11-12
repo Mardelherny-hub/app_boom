@@ -41,16 +41,15 @@
 
                     <a href="{{ route('admin.project-categories.index') }}" class="inline-flex items-center px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-lg text-sm font-medium transition">
                         Cancel
-                    </a>
-
-                    <form method="POST" action="{{ route('admin.project-categories.destroy', $category->id) }}" onsubmit="return confirm('Are you sure?')" class="ml-auto">
-                        @csrf
-                        @method('DELETE')
-                        <x-admin.button type="submit" variant="danger">
-                            Delete Category
-                        </x-admin.button>
-                    </form>
+                    </a>                   
                 </div>
+            </form>
+             <form method="POST" action="{{ route('admin.project-categories.destroy', $category->id) }}" onsubmit="return confirm('Are you sure?')" class="mt-4">
+                @csrf
+                @method('DELETE')
+                <x-admin.button type="submit" variant="danger">
+                    Delete Category
+                </x-admin.button>
             </form>
         </div>
     </div>

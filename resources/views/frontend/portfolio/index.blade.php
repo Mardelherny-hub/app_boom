@@ -48,8 +48,8 @@
                         <a href="{{ route('portfolio.show', $project->slug) }}" 
                            class="relative aspect-square bg-gradient-to-br {{ $gradient }} rounded-2xl overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-2xl">
                             
-                            @if($project->getFirstMediaUrl('featured'))
-                                <img src="{{ $project->getFirstMediaUrl('featured') }}" 
+                            @if($project->getFirstMediaUrl('featured_image'))
+                                <img src="{{ $project->getFirstMediaUrl('featured_image') }}" 
                                      alt="{{ $project->title }}"
                                      class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                             @endif
