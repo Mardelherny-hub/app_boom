@@ -4,128 +4,110 @@
         {!! seo()->render() !!}
     </x-slot>
 
-    {{-- Hero Section Blog --}}
-    <section class="relative bg-gradient-to-br from-boom-green via-boom-blue to-boom-pink py-20 px-4 overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-10 right-10 w-40 h-40 bg-white rounded-full animate-float"></div>
-            <div class="absolute bottom-20 left-20 w-32 h-32 bg-white rounded-full animate-floatReverse"></div>
-        </div>
-        
-        <div class="relative z-10 max-w-4xl mx-auto text-center text-white">
-            <h1 class="text-5xl md:text-7xl font-black uppercase mb-6">
-                Blog
-            </h1>
-            <p class="text-xl md:text-2xl opacity-90">
-                Tendencias, consejos y novedades del mundo creativo
-            </p>
+    {{-- Header --}}
+    <section class="pt-32 pb-16 bg-boom-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-black text-white uppercase mb-4">Blog</h1>
+            <p class="text-xl text-white opacity-80">Ideas, tendencias y consejos de diseño</p>
         </div>
     </section>
 
+    {{-- Categories Filter --}}
+    @if($categories->count() > 0)
+    <section class="py-6 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <a href="{{ route('blog.index') }}" 
+                   class="px-5 py-2 rounded-full font-medium text-sm uppercase tracking-wide transition {{ !isset($category) ? 'bg-boom-orange text-white' : 'bg-gray-100 text-boom-gray hover:bg-gray-200' }}">
+                    Todos
+                </a>
+                @foreach($categories as $cat)
+                <a href="{{ route('blog.category', $cat->slug) }}" 
+                   class="px-5 py-2 rounded-full font-medium text-sm uppercase tracking-wide transition {{ isset($category) && $category->id === $cat->id ? 'bg-boom-orange text-white' : 'bg-gray-100 text-boom-gray hover:bg-gray-200' }}">
+                    {{ $cat->name }}
+                </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
+
     {{-- Posts Grid --}}
-    <section class="py-20 px-4 bg-white">
-        <div class="max-w-7xl mx-auto">
-            
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             @if($posts->count() > 0)
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach($posts as $post)
-                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-                        
-                        {{-- Imagen destacada --}}
-                        <div class="aspect-video overflow-hidden bg-gradient-to-br from-boom-blue to-boom-pink">
+                    <article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <a href="{{ route('blog.show', $post->slug) }}" class="block">
                             @if($post->getFirstMediaUrl('featured_image'))
-                                <img src="{{ $post->getFirstMediaUrl('featured_image') }}" 
-                                     alt="{{ $post->title }}"
-                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            @else
-                                <div class="w-full h-full flex items-center justify-center">
-                                    <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                    </svg>
+                                <div class="overflow-hidden">
+                                    <img src="{{ $post->getFirstMediaUrl('featured_image') }}" 
+                                         alt="{{ $post->title }}"
+                                         class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                                 </div>
+                            @else
+                                <div class="w-full h-48 bg-gradient-to-br from-boom-pink to-boom-blue"></div>
                             @endif
-                        </div>
+                        </a>
                         
-                        {{-- Contenido --}}
                         <div class="p-6">
-                            {{-- Categoría --}}
-                            @if($post->category)
-                                <span class="inline-block bg-boom-orange/10 text-boom-orange text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-                                    {{ $post->category->name }}
-                                </span>
-                            @endif
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                @if($post->category)
+                                    <span class="text-boom-orange font-medium">{{ $post->category->name }}</span>
+                                    <span class="mx-2">•</span>
+                                @endif
+                                <time datetime="{{ $post->published_at->toDateString() }}">
+                                    {{ $post->published_at->format('d M, Y') }}
+                                </time>
+                            </div>
                             
-                            {{-- Título --}}
-                            <h2 class="text-xl font-bold text-boom-gray mb-3 group-hover:text-boom-orange transition-colors line-clamp-2">
+                            <h2 class="text-xl font-bold text-boom-gray mb-3 group-hover:text-boom-orange transition-colors">
                                 <a href="{{ route('blog.show', $post->slug) }}">
                                     {{ $post->title }}
                                 </a>
                             </h2>
                             
-                            {{-- Excerpt --}}
                             @if($post->excerpt)
-                                <p class="text-gray-600 mb-4 line-clamp-3">
-                                    {{ $post->excerpt }}
-                                </p>
-                            @else
-                                <p class="text-gray-600 mb-4 line-clamp-3">
-                                    {{ Str::limit(strip_tags($post->content), 120) }}
-                                </p>
+                            <p class="text-gray-600 mb-4">{{ Str::limit($post->excerpt, 100) }}</p>
                             @endif
                             
-                            {{-- Meta info --}}
-                            <div class="flex items-center justify-between text-sm text-gray-500 border-t border-gray-100 pt-4">
-                                <div class="flex items-center space-x-4">
-                                    <span class="flex items-center">
-                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                        </svg>
-                                        {{ $post->published_at->format('d M Y') }}
-                                    </span>
-                                </div>
-                                
-                                <a href="{{ route('blog.show', $post->slug) }}" 
-                                   class="text-boom-orange font-semibold hover:text-boom-gray transition-colors flex items-center">
-                                    Leer más
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                            </div>
+                            <a href="{{ route('blog.show', $post->slug) }}" 
+                               class="inline-flex items-center text-boom-orange font-semibold text-sm hover:underline">
+                                Leer más
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
                         </div>
                     </article>
                     @endforeach
                 </div>
-                
-                {{-- Paginación --}}
+
+                {{-- Pagination --}}
                 @if($posts->hasPages())
-                    <div class="mt-12">
-                        {{ $posts->links() }}
-                    </div>
+                <div class="mt-12">
+                    {{ $posts->links() }}
+                </div>
                 @endif
             @else
-                <div class="text-center py-20">
-                    <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
-                    </svg>
-                    <h3 class="text-xl font-bold text-gray-500 mb-2">No hay artículos disponibles</h3>
-                    <p class="text-gray-400">Pronto publicaremos nuevo contenido</p>
+                <div class="text-center py-12">
+                    <p class="text-gray-500">No hay artículos disponibles en este momento.</p>
                 </div>
             @endif
         </div>
     </section>
 
-    {{-- CTA Section --}}
-    <section class="bg-boom-pink py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center text-boom-gray">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                ¿Querés estar al día?
-            </h2>
-            <p class="text-lg leading-relaxed mb-8 opacity-90">
-                Suscribite para recibir las últimas tendencias y consejos creativos
+    {{-- CTA --}}
+    <section class="py-20 bg-boom-blue">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Tenés un proyecto en mente?</h2>
+            <p class="text-lg opacity-90 mb-8">
+                Contactanos y hagamos algo increíble juntos.
             </p>
             <a href="{{ route('contact') }}" 
-               class="inline-block bg-boom-gray text-white font-bold py-4 px-8 rounded-full uppercase text-sm tracking-wider hover:bg-boom-orange transition-all transform hover:scale-105">
-                Contactar
+               class="inline-block border-2 border-white text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-boom-blue transition-all">
+                Contactanos
             </a>
         </div>
     </section>

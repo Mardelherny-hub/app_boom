@@ -18,7 +18,7 @@ class HomeController extends Controller
         $services = Service::published()
             ->featured()
             ->ordered()
-            ->take(6)
+            ->take(8)
             ->get();
 
         // Recent projects - OPTIMIZADO

@@ -18,8 +18,11 @@ class Page extends Model
         'title',
         'slug',
         'description',
+        'content',
         'blocks',
         'template',
+        'show_in_menu',
+        'menu_order',
         'meta_title',
         'meta_description',
         'published_at',
@@ -29,6 +32,8 @@ class Page extends Model
     {
         return [
             'blocks' => 'array',
+            'show_in_menu' => 'boolean',
+            'menu_order' => 'integer',
             'published_at' => 'datetime',
         ];
     }
@@ -72,5 +77,16 @@ class Page extends Model
     public function usesTemplate(string $template): bool
     {
         return $this->template === $template;
+    }
+
+    /**
+     * Scope para páginas visibles en menú.
+     */
+    public function scopeInMenu($query)
+    {
+        return $query->where('show_in_menu', true)
+                    ->whereNotNull('published_at')
+                    ->where('published_at', '<=', now())
+                    ->orderBy('menu_order', 'asc');
     }
 }

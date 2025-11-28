@@ -20,7 +20,7 @@ class PageController extends Controller
         seo()
             ->title($page->meta_title ?: $page->title)
             ->description($page->meta_description ?: $page->description)
-            ->canonical(route('pages.show', $page->slug));
+            ->canonical(route('page.show', $page->slug));
 
         return view('frontend.pages.show', compact('page'));
     }

@@ -20,6 +20,9 @@ class StorePageRequest extends FormRequest
             'template' => 'nullable|string|max:255',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:500',
+            'content' => 'nullable|string',
+            'show_in_menu' => 'nullable|boolean',
+            'menu_order' => 'nullable|integer|min:0',
             'published_at' => 'nullable|date',
         ];
     }

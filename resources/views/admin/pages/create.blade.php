@@ -24,6 +24,11 @@
                     rows="3"
                 />
 
+                <x-admin.trix-editor
+                    label="Contenido"
+                    name="content"
+                />
+
                 <x-admin.form-select
                     label="Template"
                     name="template"
@@ -33,6 +38,25 @@
                     <option value="about">About</option>
                     <option value="contact">Contact</option>
                 </x-admin.form-select>
+
+                <!-- Menu Settings -->
+                <div class="border-t border-gray-200 pt-4 mt-6">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-4">Configuración de Menú</h3>
+                    
+                    <div class="flex items-center mb-4">
+                        <input type="checkbox" name="show_in_menu" id="show_in_menu" value="1" 
+                            class="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                        <label for="show_in_menu" class="ml-2 text-sm text-gray-700">Mostrar en menú de navegación</label>
+                    </div>
+                    
+                    <x-admin.form-input
+                        label="Orden en menú"
+                        name="menu_order"
+                        type="number"
+                        value="0"
+                        placeholder="0 = primero"
+                    />
+                </div>
 
                 <!-- SEO Section -->
                 <div class="border-t border-gray-200 pt-4 mt-6">
