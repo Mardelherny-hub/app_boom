@@ -4,28 +4,45 @@
         {!! seo()->render() !!}
     </x-slot>
 
-    {{-- Header --}}
-    <section class="pt-32 pb-16 bg-boom-gray">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl md:text-7xl font-black text-white uppercase mb-4">
-                PORT<span class="text-boom-orange">F</span>OLIO
-            </h1>
-            <p class="text-xl text-white opacity-80">Algunos de nuestros trabajos recientes</p>
+    {{-- ============================================ --}}
+    {{-- HEADER --}}
+    {{-- ============================================ --}}
+    <section class="bg-boom-blue py-20 px-4 pt-32">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                {{-- Texto IZQUIERDA --}}
+                <div>
+                    <h1 class="text-5xl md:text-7xl font-black text-white uppercase leading-none mb-6">
+                        PORT<br>FO<span class="text-boom-orange">L</span>IO
+                    </h1>
+                </div>
+                
+                {{-- Texto DERECHA --}}
+                <div class="text-white">
+                    <p class="text-lg md:text-xl leading-relaxed">
+                        Estos son algunos de los proyectos que desarrollamos en los últimos años para marcas de diferentes rubros y lugares del país.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    {{-- Categories Filter --}}
+    {{-- ============================================ --}}
+    {{-- FILTROS POR CATEGORÍA --}}
+    {{-- ============================================ --}}
     @if($categories->count() > 0)
-    <section class="py-6 bg-white border-b">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="bg-[#FBFAFA] py-8 px-4">
+        <div class="max-w-6xl mx-auto">
             <div class="flex flex-wrap gap-3 justify-center">
                 <a href="{{ route('portfolio.index') }}" 
-                   class="px-5 py-2 rounded-full font-medium text-sm uppercase tracking-wide transition {{ !isset($category) ? 'bg-boom-orange text-white' : 'bg-gray-100 text-boom-gray hover:bg-gray-200' }}">
+                   class="px-6 py-2 rounded-full border-2 font-medium transition
+                          {{ !isset($category) ? 'bg-boom-gray text-white border-boom-gray' : 'border-boom-gray text-boom-gray hover:bg-boom-gray hover:text-white' }}">
                     Todos
                 </a>
                 @foreach($categories as $cat)
                 <a href="{{ route('portfolio.category', $cat->slug) }}" 
-                   class="px-5 py-2 rounded-full font-medium text-sm uppercase tracking-wide transition {{ isset($category) && $category->id === $cat->id ? 'bg-boom-orange text-white' : 'bg-gray-100 text-boom-gray hover:bg-gray-200' }}">
+                   class="px-6 py-2 rounded-full border-2 font-medium transition
+                          {{ isset($category) && $category->id === $cat->id ? 'bg-boom-gray text-white border-boom-gray' : 'border-boom-gray text-boom-gray hover:bg-boom-gray hover:text-white' }}">
                     {{ $cat->name }}
                 </a>
                 @endforeach
@@ -34,39 +51,35 @@
     </section>
     @endif
 
-    {{-- Projects Grid --}}
-    @php
-    $projectColors = [
-        'from-yellow-400 to-orange-400',
-        'from-green-400 to-emerald-500',
-        'from-purple-500 to-violet-600',
-        'from-boom-blue to-cyan-500',
-        'from-boom-pink to-rose-400',
-        'from-red-500 to-orange-500',
-        'from-indigo-500 to-purple-600',
-        'from-teal-400 to-cyan-500',
-        'from-amber-400 to-yellow-500',
-        'from-fuchsia-500 to-pink-500',
-        'from-lime-400 to-green-500',
-        'from-sky-400 to-blue-500',
-    ];
-    @endphp
-
-    <section class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{-- ============================================ --}}
+    {{-- GRILLA DE PROYECTOS --}}
+    {{-- ============================================ --}}
+    <section class="bg-[#FBFAFA] py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            @php
+            $projectColors = [
+                'bg-boom-orange',
+                'bg-boom-blue', 
+                'bg-boom-green',
+                'bg-boom-pink',
+                'bg-boom-gray',
+                'bg-yellow-400',
+            ];
+            @endphp
+            
             @if($projects->count() > 0)
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                     @foreach($projects as $index => $project)
                     <a href="{{ route('portfolio.show', $project->slug) }}" 
                        class="relative aspect-square rounded-lg overflow-hidden group">
                         @if($project->getFirstMediaUrl('featured_image'))
                             <img src="{{ $project->getFirstMediaUrl('featured_image') }}" 
                                  alt="{{ $project->title }}"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity"></div>
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity"></div>
                         @else
-                            <div class="w-full h-full bg-gradient-to-br {{ $projectColors[$index % 12] }}"></div>
-                            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity"></div>
+                            <div class="w-full h-full {{ $projectColors[$index % 6] }}"></div>
+                            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity"></div>
                         @endif
                         <div class="absolute bottom-4 left-4 text-white">
                             @if($project->category)
@@ -78,31 +91,17 @@
                     @endforeach
                 </div>
 
-                {{-- Pagination --}}
+                {{-- Paginación --}}
                 @if($projects->hasPages())
-                <div class="mt-12">
+                <div class="mt-12 flex justify-center">
                     {{ $projects->links() }}
                 </div>
                 @endif
             @else
-                <div class="text-center py-12">
-                    <p class="text-gray-500">No hay proyectos disponibles en este momento.</p>
+                <div class="bg-white rounded-lg shadow-sm p-12 text-center">
+                    <p class="text-gray-500 text-lg">Próximamente mostraremos nuestros proyectos</p>
                 </div>
             @endif
-        </div>
-    </section>
-
-    {{-- CTA --}}
-    <section class="py-20 bg-boom-blue">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Querés un proyecto así?</h2>
-            <p class="text-lg opacity-90 mb-8">
-                Contanos tu idea y la hacemos realidad.
-            </p>
-            <a href="{{ route('contact') }}" 
-               class="inline-block border-2 border-white text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-boom-blue transition-all">
-                Comenzar proyecto
-            </a>
         </div>
     </section>
 
