@@ -5,30 +5,33 @@
     </x-slot>
 
     {{-- ============================================ --}}
-    {{-- HEADER - Intro Blog --}}
-    {{-- ============================================ --}}
-    <section class="bg-boom-orange py-20 px-4 pt-32 mb-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                {{-- Imagen IZQUIERDA --}}
-                <div>
-                    <div class="bg-white/20 aspect-[4/3] rounded-lg flex items-center justify-center text-white/60">
-                        <span class="text-sm">Imagen pendiente</span>
-                    </div>
-                </div>
-                
-                {{-- Texto DERECHA --}}
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-black text-white uppercase mb-6">
-                        Nove<span class="text-boom-gray">da</span>des
-                    </h1>
-                    <p class="text-lg md:text-xl text-white leading-relaxed">
-                        Presentamos las últimas noticias relacionadas al mundo del marketing y proyectos destacados de boom!
-                    </p>
-                </div>
+{{-- HEADER - Intro Blog --}}
+{{-- ============================================ --}}
+<section class="bg-boom-gray py-20 px-4 pt-32 mb-6 relative">
+    {{-- Gradiente superior para navbar --}}
+    <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white/100 to-transparent"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            {{-- Imagen IZQUIERDA --}}
+            <div>
+                <img src="{{ asset('images/blog/blog_header.webp') }}" 
+                     alt="Blog Marketinero" 
+                     class="w-full rounded-lg">
+            </div>
+            
+            {{-- Texto DERECHA --}}
+            <div>
+                <h1 class="text-4xl md:text-5xl font-black text-white uppercase mb-6">
+                    Nove<span class="text-boom-orange">da</span>des
+                </h1>
+                <p class="text-lg md:text-xl text-white leading-relaxed">
+                    Presentamos las últimas noticias relacionadas al mundo del marketing y proyectos destacados de boom!
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     {{-- ============================================ --}}
     {{-- FILTROS POR CATEGORÍA --}}

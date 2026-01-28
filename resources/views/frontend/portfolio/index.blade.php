@@ -10,11 +10,11 @@
     <section class="bg-boom-blue py-20 px-4 pt-32">
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                {{-- Texto IZQUIERDA --}}
+                {{-- Imagen IZQUIERDA --}}
                 <div>
-                    <h1 class="text-5xl md:text-7xl font-black text-white uppercase leading-none mb-6">
-                        PORT<br>FO<span class="text-boom-orange">L</span>IO
-                    </h1>
+                    <img src="{{ asset('images/portfolio/portfolio_header.webp') }}" 
+                        alt="Portfolio Boom Studio" 
+                        class="w-full rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}

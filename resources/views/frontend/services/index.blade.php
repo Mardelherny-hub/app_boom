@@ -20,7 +20,9 @@
                 </div>
                 <div>
                     <div class="bg-white/20 aspect-[4/3] rounded-lg flex items-center justify-center text-white/60">
-                        <span class="text-sm">Imagen pendiente</span>
+                        <img src="{{ asset('images/home/servicios.webp') }}" 
+         alt="Servicios Boom Studio" 
+         class="w-full aspect-[4/3] object-cover rounded-lg">
                     </div>
                 </div>
             </div>
@@ -75,7 +77,9 @@
                 {{-- Imagen DERECHA --}}
                 <div>
                     <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
-                        <span class="text-sm">Imagen pendiente</span>
+                        <img src="{{ asset('images/services/redes_sociales.webp') }}" 
+                            alt="Redes Sociales" 
+                            class="w-full aspect-[4/3] object-cover rounded-lg">
                     </div>
                 </div>
             </div>
@@ -90,9 +94,9 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 {{-- Imagen IZQUIERDA --}}
                 <div class="order-2 md:order-1">
-                    <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
-                        <span class="text-sm">Imagen pendiente</span>
-                    </div>
+                    <img src="{{ asset('images/services/publicidad.webp') }}" 
+                        alt="Publicidad" 
+                        class="w-full aspect-[4/3] object-cover rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
@@ -189,7 +193,11 @@
                 {{-- Imagen DERECHA --}}
                 <div>
                     <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
-                        <span class="text-sm">Imagen pendiente</span>
+                        <div>
+                            <img src="{{ asset('images/services/diseño_grafico.webp') }}" 
+                                alt="Diseño Gráfico" 
+                                class="w-full aspect-[4/3] object-cover rounded-lg">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -205,7 +213,11 @@
                 {{-- Imagen IZQUIERDA --}}
                 <div class="order-2 md:order-1">
                     <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
-                        <span class="text-sm">Imagen pendiente</span>
+                        <div class="order-2 md:order-1">
+                            <img src="{{ asset('images/services/web.webp') }}" 
+                                alt="Desarrollo Web" 
+                                class="w-full aspect-[4/3] object-cover rounded-lg">
+                        </div>
                     </div>
                 </div>
                 
