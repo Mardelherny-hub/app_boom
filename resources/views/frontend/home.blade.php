@@ -321,11 +321,20 @@
     <section class="bg-boom-blue py-20 px-4">
         <div class="max-w-6xl mx-auto">
             
-            {{-- Texto --}}
-            <div class="text-center text-white mb-12">
-                <p class="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto">
-                    Trabajamos conjuntamente con cada uno de nuestros clientes para encontrar la estrategia más adecuada
-                </p>
+            {{-- Texto + Imagen --}}
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                {{-- Texto IZQUIERDA --}}
+                <div class="text-white">
+                    <p class="text-xl md:text-2xl leading-relaxed">
+                        Trabajamos conjuntamente con cada uno de nuestros clientes para encontrar la estrategia más adecuada
+                    </p>
+                </div>
+                {{-- Imagen DERECHA --}}
+                <div>
+                    <img src="{{ asset('images/home/clientes.webp') }}" 
+                        alt="Clientes Boom Studio" 
+                        class="w-full rounded-lg">
+                </div>
             </div>
             
             {{-- Logos Carrusel --}}
@@ -372,8 +381,9 @@
                 
                 {{-- Texto DERECHA --}}
                 <div>
-                    <p class="text-lg md:text-xl text-boom-gray leading-relaxed">
-                        Presentamos las últimas noticias relacionadas al mundo del marketing y proyectos destacados de boom!
+                    <p class="text-lg md:text-2xl text-boom-gray leading-relaxed">
+                        Presentamos las últimas noticias relacionadas al mundo del marketing.
+                        <br>También vas a encontrar los proyectos destacados de boom!
                     </p>
                 </div>
             </div>
