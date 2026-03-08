@@ -8,10 +8,14 @@
     {{-- HERO - IMAGEN PRINCIPAL --}}
     {{-- ============================================ --}}
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {{-- Imagen de fondo --}}
-        <img src="{{ asset('images/home/hero.webp') }}" 
+        {{-- Imagen de fondo desktop --}}
+        <img src="{{ asset('images/home/banner-principal.webp') }}" 
             alt="Boom Studio - Bienvenido" 
-            class="absolute inset-0 w-full h-full object-cover">
+            class="absolute inset-0 w-full h-full object-cover hidden md:block">
+        {{-- Imagen de fondo mobile --}}
+        <img src="{{ asset('images/home/banner-principal-mobile.webp') }}" 
+            alt="Boom Studio - Bienvenido" 
+            class="absolute inset-0 w-full h-full object-cover md:hidden">
     </section>
     {{-- ============================================ --}}
     {{-- HERO SLIDESHOW --}}
@@ -129,27 +133,13 @@
     {{-- ============================================ --}}
     {{-- BLOQUE 1 - INTRO AGENCIA --}}
     {{-- ============================================ --}}
-    <section class="bg-[#FBFAFA] py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                {{-- Imagen IZQUIERDA --}}
-                <div>
-                    <img src="{{ asset('images/home/banner.webp') }}" 
-                        alt="Boom Studio - Agencia Creativa" 
-                        class="w-full aspect-[4/3] object-cover rounded-lg">
-                </div>
-                
-                {{-- Texto DERECHA --}}
-                <div>
-                    <p class="text-lg md:text-xl text-boom-gray leading-relaxed mb-6">
-                        Somos una agencia creativa con visión comercial, donde el análisis, la estrategia y la comunicación se combinan con diseño, datos y contenido audiovisual.
-                    </p>
-                    <p class="text-lg md:text-xl text-boom-gray italic font-medium">
-                        Llegamos para conectar lo comercial y lo digital.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <section class="w-full">
+        <img src="{{ asset('images/home/banner-servicios.webp') }}" 
+            alt="Boom Studio - Servicios" 
+            class="w-full object-cover hidden md:block">
+        <img src="{{ asset('images/home/banner-servicios-mobile.webp') }}" 
+            alt="Boom Studio - Servicios" 
+            class="w-full object-cover md:hidden">
     </section>
 
     {{-- ============================================ --}}
@@ -170,7 +160,7 @@
                 
                 {{-- Imagen DERECHA --}}
                 <div>
-                    <img src="{{ asset('images/home/servicios.webp') }}" 
+                    <img src="{{ asset('images/home/servicios-new.webp') }}" 
                         alt="Servicios Boom Studio" 
                         class="w-full aspect-[4/3] object-cover rounded-lg">
                 </div>
@@ -242,7 +232,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
                 {{-- Imagen IZQUIERDA --}}
                 <div>
-                    <img src="{{ asset('images/home/portfolio.webp') }}" 
+                    <img src="{{ asset('images/home/portfolio-new.webp') }}" 
                         alt="Portfolio Boom Studio" 
                         class="w-full rounded-lg">
                 </div>
@@ -331,7 +321,7 @@
                 </div>
                 {{-- Imagen DERECHA --}}
                 <div>
-                    <img src="{{ asset('images/home/clientes.webp') }}" 
+                    <img src="{{ asset('images/home/clientes-new.webp') }}" 
                         alt="Clientes Boom Studio" 
                         class="w-full rounded-lg">
                 </div>
@@ -342,9 +332,9 @@
                 <div class="flex animate-scroll-left space-x-12 items-center">
                     {{-- Duplicamos los logos para efecto infinito --}}
                     @for($j = 0; $j < 2; $j++)
-                        @for($i = 1; $i <= 12; $i++)
-                            <div class="flex-shrink-0 bg-white rounded-lg px-6 py-4">
-                                <img src="{{ asset('images/home/clientes/' . $i . '.png') }}" 
+                        @for($i = 1; $i <= 9; $i++)
+                            <div class="flex-shrink-0">
+                                <img src="{{ asset('images/home/clientes/' . $i . '.webp') }}" 
                                     alt="Cliente {{ $i }}" 
                                     class="h-16 md:h-20 object-contain">
                             </div>
@@ -356,7 +346,7 @@
             {{-- Botón --}}
             <div class="text-center">
                 <a href="{{ route('portfolio.index') }}" 
-                class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider hover:bg-white hover:text-boom-blue transition">
+                class="inline-block border-2 border-white text-white px-8 py-3 px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider hover:bg-boom-orange hover:border-boom-orange hover:text-white transition">
                     Ver más
                 </a>
             </div>
@@ -367,21 +357,22 @@
     {{-- ============================================ --}}
     {{-- BLOQUE 6 - BLOG --}}
     {{-- ============================================ --}}
-    <section class="bg-[#FBFAFA] py-20 px-4">
+    <section class="bg-[#E94C23] py-20 px-4">
         <div class="max-w-6xl mx-auto">
             
             {{-- Intro: Imagen + Texto --}}
             <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
                 {{-- Imagen IZQUIERDA --}}
                 <div>
-                    <img src="{{ asset('images/home/blog.webp') }}" 
+                    <img src="{{ asset('images/home/blog-mkt.webp') }}" 
                         alt="Blog Marketinero Boom Studio" 
                         class="w-full rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
                 <div>
-                    <p class="text-lg md:text-2xl text-boom-gray leading-relaxed">
+                    <h2 class="text-4xl font-black uppercase text-white mb-4">NOVEDADES</h2>
+                    <p class="text-lg md:text-2xl text-white leading-relaxed">
                         Presentamos las últimas noticias relacionadas al mundo del marketing.
                         <br>También vas a encontrar los proyectos destacados de boom!
                     </p>
@@ -422,7 +413,7 @@
             @if($posts->count() > 0)
             <div class="text-center">
                 <a href="{{ route('blog.index') }}" 
-                class="inline-block border-2 border-boom-gray text-boom-gray px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider hover:bg-boom-gray hover:text-white transition">
+                class="inline-block border-2 border-boom-orange bg-boom-orange text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider hover:bg-boom-gray hover:border-boom-gray hover:text-white transition">
                     Ver todas
                 </a>
             </div>
@@ -459,7 +450,7 @@
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-boom-orange focus:ring-1 focus:ring-boom-orange outline-none resize-none"></textarea>
                         
                         <button type="submit" 
-                                class="bg-boom-orange text-white font-bold py-3 px-8 rounded-full uppercase text-sm tracking-wider hover:bg-opacity-90 transition-all">
+                                class="bg-boom-orange text-white font-bold py-3 px-8 rounded-full uppercase text-sm tracking-wider hover:bg-boom-gray transition-all">
                             Enviar
                         </button>
                         

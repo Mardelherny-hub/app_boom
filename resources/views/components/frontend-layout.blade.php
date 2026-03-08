@@ -8,7 +8,7 @@
     @if(isset($seo))
         {!! $seo !!}
     @else
-        <title>{{ config('app.name', 'Boom! Studio') }}</title>
+        <title>boom! studio</title>
         <meta name="description" content="Estudio de diseño gráfico y marketing digital">
     @endif
     <!-- Favicon -->

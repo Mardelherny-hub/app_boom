@@ -38,11 +38,7 @@
                 {{-- Texto IZQUIERDA --}}
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold text-boom-gray mb-4">Redes Sociales</h2>
-                    <p class="text-lg text-boom-orange font-medium mb-4">Hacemos que tu voz llegue donde importa.</p>
-                    <p class="text-boom-gray leading-relaxed mb-6">
-                        Gestionamos tus redes como si fueran propias: planificamos el calendario, creamos contenidos, los editamos y los publicamos. Tus canales se mantienen activos, atractivos y alineados con tu marca sin que tengas que preocuparte por nada.
-                    </p>
-                    
+                    <p class="text-lg text-boom-orange font-medium mb-4">Hacemos que tu voz llegue donde importa.</p>                   
                     <p class="font-medium text-boom-gray mb-3">Lo que ofrecemos:</p>
                     <ul class="text-boom-gray space-y-2 mb-8">
                         <li class="flex items-start">
@@ -77,7 +73,7 @@
                 {{-- Imagen DERECHA --}}
                 <div>
                     <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
-                        <img src="{{ asset('images/services/redes_sociales.webp') }}" 
+                        <img src="{{ asset('images/services/redes-sociales-new.webp') }}" 
                             alt="Redes Sociales" 
                             class="w-full aspect-[4/3] object-cover rounded-lg">
                     </div>
@@ -94,7 +90,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 {{-- Imagen IZQUIERDA --}}
                 <div class="order-2 md:order-1">
-                    <img src="{{ asset('images/services/publicidad.webp') }}" 
+                    <img src="{{ asset('images/services/publicidad-new.webp') }}" 
                         alt="Publicidad" 
                         class="w-full aspect-[4/3] object-cover rounded-lg">
                 </div>
@@ -103,10 +99,6 @@
                 <div class="order-1 md:order-2">
                     <h2 class="text-3xl md:text-4xl font-bold text-boom-gray mb-4">Publicidad</h2>
                     <p class="text-lg text-boom-orange font-medium mb-4">Hacemos que te vean — y que te elijan.</p>
-                    <p class="text-boom-gray leading-relaxed mb-6">
-                        Desarrollamos campañas estratégicas que conectan con tu público objetivo. Desde el análisis del mercado hasta la optimización de resultados: planificamos, ejecutamos y medimos para que cada peso invertido rinda.
-                    </p>
-                    
                     <p class="font-medium text-boom-gray mb-3">Qué incluye:</p>
                     <ul class="text-boom-gray space-y-2 mb-8">
                         <li class="flex items-start">
@@ -151,10 +143,6 @@
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold text-boom-gray mb-4">Diseño Gráfico</h2>
                     <p class="text-lg text-boom-orange font-medium mb-4">Diseñamos tu imagen para que tu marca hable por vos.</p>
-                    <p class="text-boom-gray leading-relaxed mb-6">
-                        Te ayudamos a construir una identidad visual coherente y fuerte: desde lo esencial (logo, papelería) hasta el diseño de productos, packaging o catálogos. Todo pensado para transmitir los valores y personalidad de tu marca.
-                    </p>
-                    
                     <p class="font-medium text-boom-gray mb-3">Incluye:</p>
                     <ul class="text-boom-gray space-y-2 mb-8">
                         <li class="flex items-start">
@@ -194,7 +182,7 @@
                 <div>
                     <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
                         <div>
-                            <img src="{{ asset('images/services/diseño_grafico.webp') }}" 
+                            <img src="{{ asset('images/services/diseno-grafico-new.webp') }}" 
                                 alt="Diseño Gráfico" 
                                 class="w-full aspect-[4/3] object-cover rounded-lg">
                         </div>
@@ -214,7 +202,7 @@
                 <div class="order-2 md:order-1">
                     <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
                         <div class="order-2 md:order-1">
-                            <img src="{{ asset('images/services/web.webp') }}" 
+                            <img src="{{ asset('images/services/web-new.webp') }}" 
                                 alt="Desarrollo Web" 
                                 class="w-full aspect-[4/3] object-cover rounded-lg">
                         </div>
@@ -225,10 +213,6 @@
                 <div class="order-1 md:order-2">
                     <h2 class="text-3xl md:text-4xl font-bold text-boom-gray mb-4">Web</h2>
                     <p class="text-lg text-boom-orange font-medium mb-4">Llevamos tu negocio al mundo digital con profesionalismo.</p>
-                    <p class="text-boom-gray leading-relaxed mb-6">
-                        Creamos sitios web autoadministrables, tiendas online o páginas institucionales que se adaptan a cualquier dispositivo y ayudan a alcanzar tus objetivos de comunicación o venta.
-                    </p>
-                    
                     <p class="font-medium text-boom-gray mb-3">Servicios disponibles:</p>
                     <ul class="text-boom-gray space-y-2 mb-8">
                         <li class="flex items-start">

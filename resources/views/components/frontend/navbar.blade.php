@@ -8,10 +8,9 @@
         :class="scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         
-        <!-- Logo -->
-        <a href="{{ route('home') }}" class="text-7xl font-script font-bold transition-colors"
-           :class="scrolled ? 'text-boom-orange' : 'text-boom-gray'">
-            boom! <span class="text-xs font-sans font-normal tracking-widest">studio</span>
+        <a href="{{ route('home') }}" class="inline-block mb-4">
+            <img src="{{ asset('images/logo/logo-naranja.webp') }}" 
+                    alt="boom! studio" class="h-12 w-auto">
         </a>
         
         <!-- Desktop Menu -->
