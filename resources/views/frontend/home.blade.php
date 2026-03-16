@@ -7,15 +7,15 @@
     {{-- ============================================ --}}
     {{-- HERO - IMAGEN PRINCIPAL --}}
     {{-- ============================================ --}}
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section class="relative w-full overflow-hidden">
         {{-- Imagen de fondo desktop --}}
         <img src="{{ asset('images/home/banner-principal.webp') }}" 
             alt="Boom Studio - Bienvenido" 
-            class="absolute inset-0 w-full h-full object-cover object-top hidden md:block">
+            class="w-full h-auto hidden md:block">
         {{-- Imagen de fondo mobile --}}
         <img src="{{ asset('images/home/banner-principal-mobile.webp') }}" 
             alt="Boom Studio - Bienvenido" 
-            class="absolute inset-0 w-full h-full object-cover md:hidden">
+            class="w-full h-auto md:hidden">
     </section>
     {{-- ============================================ --}}
     {{-- HERO SLIDESHOW --}}
