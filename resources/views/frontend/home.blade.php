@@ -312,7 +312,7 @@
         <div class="max-w-6xl mx-auto">
             
             {{-- Texto + Imagen --}}
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-12" style="grid-template-columns: 3fr 2fr;">
                 {{-- Texto IZQUIERDA --}}
                 <div class="text-white">
                     <p class="text-xl md:text-2xl leading-relaxed">
