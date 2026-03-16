@@ -19,11 +19,9 @@
                     </p>
                 </div>
                 <div>
-                    <div class="bg-white/20 aspect-[4/3] rounded-lg flex items-center justify-center text-white/60">
-                        <img src="{{ asset('images/home/servicios.webp') }}" 
-         alt="Servicios Boom Studio" 
-         class="w-full aspect-[4/3] object-cover rounded-lg">
-                    </div>
+                    <img src="{{ asset('images/home/servicios.webp') }}" 
+                        alt="Servicios Boom Studio" 
+                        class="w-full object-contain rounded-lg">
                 </div>
             </div>
         </div>
@@ -72,11 +70,9 @@
                 
                 {{-- Imagen DERECHA --}}
                 <div>
-                    <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
-                        <img src="{{ asset('images/services/redes-sociales-new.webp') }}" 
-                            alt="Redes Sociales" 
-                            class="w-full aspect-[4/3] object-cover rounded-lg">
-                    </div>
+                    <img src="{{ asset('images/services/redes-sociales-new.webp') }}" 
+                        alt="Redes Sociales" 
+                        class="w-full object-contain rounded-lg">
                 </div>
             </div>
         </div>
@@ -92,7 +88,7 @@
                 <div class="order-2 md:order-1">
                     <img src="{{ asset('images/services/publicidad-new.webp') }}" 
                         alt="Publicidad" 
-                        class="w-full aspect-[4/3] object-cover rounded-lg">
+                        class="w-full object-contain rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
@@ -180,13 +176,9 @@
                 
                 {{-- Imagen DERECHA --}}
                 <div>
-                    <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
-                        <div>
-                            <img src="{{ asset('images/services/diseno-grafico-new.webp') }}" 
-                                alt="Diseño Gráfico" 
-                                class="w-full aspect-[4/3] object-cover rounded-lg">
-                        </div>
-                    </div>
+                    <img src="{{ asset('images/services/diseno-grafico-new.webp') }}" 
+                        alt="Diseño Gráfico" 
+                        class="w-full object-contain rounded-lg">
                 </div>
             </div>
         </div>
@@ -200,13 +192,9 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 {{-- Imagen IZQUIERDA --}}
                 <div class="order-2 md:order-1">
-                    <div class="bg-gray-200 aspect-[4/3] rounded-lg flex items-center justify-center text-gray-400">
-                        <div class="order-2 md:order-1">
-                            <img src="{{ asset('images/services/web-new.webp') }}" 
-                                alt="Desarrollo Web" 
-                                class="w-full aspect-[4/3] object-cover rounded-lg">
-                        </div>
-                    </div>
+                    <img src="{{ asset('images/services/web-new.webp') }}" 
+                        alt="Desarrollo Web" 
+                        class="w-full object-contain rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
