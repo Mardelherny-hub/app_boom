@@ -162,7 +162,7 @@
                 <div>
                     <img src="{{ asset('images/home/servicios-new.webp') }}" 
                         alt="Servicios Boom Studio" 
-                        class="w-full aspect-[4/3] object-cover rounded-lg">
+                        class="w-full object-contain rounded-lg">
                 </div>
             </div>
         </div>
@@ -234,7 +234,7 @@
                 <div>
                     <img src="{{ asset('images/home/portfolio-new.webp') }}" 
                         alt="Portfolio Boom Studio" 
-                        class="w-full rounded-lg">
+                        class="w-3/4 mx-auto block rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
@@ -323,7 +323,7 @@
                 <div>
                     <img src="{{ asset('images/home/clientes-new.webp') }}" 
                         alt="Clientes Boom Studio" 
-                        class="w-full rounded-lg">
+                        class="w-3/4 mx-auto block rounded-lg">
                 </div>
             </div>
             
@@ -366,7 +366,7 @@
                 <div>
                     <img src="{{ asset('images/home/blog-mkt.webp') }}" 
                         alt="Blog Marketinero Boom Studio" 
-                        class="w-full rounded-lg">
+                        class="w-full object-contain rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
