@@ -231,10 +231,10 @@
             {{-- Intro: Imagen + Texto --}}
             <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
                 {{-- Imagen IZQUIERDA --}}
-                <div>
+                <div class="flex items-center justify-center">
                     <img src="{{ asset('images/home/portfolio-new.webp') }}" 
                         alt="Portfolio Boom Studio" 
-                        class="w-3/4 mx-auto block rounded-lg">
+                        class="w-full max-w-lg rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
