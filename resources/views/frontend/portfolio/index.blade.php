@@ -14,7 +14,7 @@
                 <div>
                     <img src="{{ asset('images/portfolio/portfolio_header.webp') }}" 
                         alt="Portfolio Boom Studio" 
-                        class="w-full rounded-lg">
+                        class="w-full rounded-lg mix-blend-multiply">
                 </div>
                 
                 {{-- Texto DERECHA --}}
