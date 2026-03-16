@@ -323,7 +323,7 @@
                 <div>
                     <img src="{{ asset('images/home/clientes-new.webp') }}" 
                         alt="Clientes Boom Studio" 
-                        class="w-2/3 mx-auto block rounded-lg">
+                        class="w-full mx-auto block rounded-lg">
                 </div>
             </div>
             
