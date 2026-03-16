@@ -11,7 +11,7 @@
         {{-- Imagen de fondo desktop --}}
         <img src="{{ asset('images/home/banner-principal.webp') }}" 
             alt="Boom Studio - Bienvenido" 
-            class="absolute inset-0 w-full h-full object-cover hidden md:block">
+            class="absolute inset-0 w-full h-full object-cover object-top hidden md:block">
         {{-- Imagen de fondo mobile --}}
         <img src="{{ asset('images/home/banner-principal-mobile.webp') }}" 
             alt="Boom Studio - Bienvenido" 
