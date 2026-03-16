@@ -363,10 +363,10 @@
             {{-- Intro: Imagen + Texto --}}
             <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
                 {{-- Imagen IZQUIERDA --}}
-                <div>
+                <div class="flex items-center justify-center">
                     <img src="{{ asset('images/home/blog-mkt.webp') }}" 
                         alt="Blog Marketinero Boom Studio" 
-                        class="w-full object-contain rounded-lg">
+                        class="w-3/4 rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
