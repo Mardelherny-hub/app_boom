@@ -72,7 +72,7 @@
                 <div>
                     <img src="{{ asset('images/services/redes-sociales-new.webp') }}" 
                         alt="Redes Sociales" 
-                        class="w-full object-contain rounded-lg">
+                        class="w-full max-w-md mx-auto block object-contain rounded-lg">
                 </div>
             </div>
         </div>
@@ -194,7 +194,7 @@
                 <div class="order-2 md:order-1">
                     <img src="{{ asset('images/services/web-new.webp') }}" 
                         alt="Desarrollo Web" 
-                        class="w-full object-contain rounded-lg">
+                        class="w-full max-w-md mx-auto block object-contain rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
