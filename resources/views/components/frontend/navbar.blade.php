@@ -9,7 +9,7 @@
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         
         <a href="{{ route('home') }}" class="inline-block">
-            <img x-show="!scrolled" src="{{ asset('images/logo/logo-naranja.webp') }}" 
+            <img x-show="!scrolled" src="{{ asset('images/logo/logo-gris.webp') }}" 
                     alt="boom! studio" class="h-16 w-auto">
             <img x-show="scrolled" src="{{ asset('images/logo/logo-naranja.webp') }}" 
                     alt="boom! studio" class="h-16 w-auto">
