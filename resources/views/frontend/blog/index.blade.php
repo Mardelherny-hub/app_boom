@@ -8,9 +8,7 @@
     {{-- HEADER - Intro Blog --}}
     {{-- ============================================ --}}
     <section class="bg-boom-gray py-20 px-4 pt-32 mb-6 relative">
-        {{-- Gradiente superior para navbar --}}
-        <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white/100 to-transparent"></div>
-        
+       
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 {{-- Imagen IZQUIERDA --}}
