@@ -7,8 +7,8 @@
     {{-- ============================================ --}}
     {{-- CONTACTO --}}
     {{-- ============================================ --}}
-    <section class="bg-boom-orange py-20 px-4 pt-32">
-        <div class="max-w-6xl mx-auto">
+    <section class="bg-boom-orange py-20 px-8 pt-32">
+        <div class="max-w-5xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 
                 {{-- Formulario --}}
