@@ -15,7 +15,7 @@
                 <div>
                     <img src="{{ asset('images/blog/blog_header.webp') }}" 
                         alt="Blog Marketinero" 
-                        class="w-full rounded-lg">
+                        class="w-3/4 mx-auto block rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
