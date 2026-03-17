@@ -1,3 +1,4 @@
+@php $navDark = true; @endphp
 <x-frontend-layout>
 
     <x-slot name="seo">
