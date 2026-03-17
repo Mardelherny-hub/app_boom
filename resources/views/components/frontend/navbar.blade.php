@@ -9,7 +9,7 @@
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         
         <a href="{{ route('home') }}" class="inline-block">
-            <img x-show="!scrolled" src="{{ asset(request()->routeIs('blog.*') ? 'images/logo/logo-naranja.webp' : 'images/logo/logo-gris.webp') }}" 
+            <img x-show="!scrolled" src="{{ asset(request()->routeIs('blog.*', 'contact') ? 'images/logo/logo-naranja.webp' : 'images/logo/logo-gris.webp') }}" 
                     alt="boom! studio" class="h-16 w-auto">
             <img x-show="scrolled" src="{{ asset('images/logo/logo-naranja.webp') }}" 
                     alt="boom! studio" class="h-16 w-auto">
@@ -19,27 +19,27 @@
         <nav class="hidden md:flex items-center space-x-8">
             <a href="{{ route('home') }}" 
                class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*') ? 'text-white' : 'text-boom-gray' }}'">Inicio</a>
+               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Inicio</a>
             <a href="{{ route('services.index') }}" 
                class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*') ? 'text-white' : 'text-boom-gray' }}'">Servicios</a>
+               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Servicios</a>
             <a href="{{ route('portfolio.index') }}" 
                class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*') ? 'text-white' : 'text-boom-gray' }}'">Portfolio</a>
+               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Portfolio</a>
             
             {{-- Páginas dinámicas --}}
             @foreach($menuPages as $menuPage)
             <a href="{{ route('page.show', $menuPage->slug) }}" 
                class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*') ? 'text-white' : 'text-boom-gray' }}'">{{ $menuPage->title }}</a>
+               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">{{ $menuPage->title }}</a>
             @endforeach
             
             <a href="{{ route('blog.index') }}" 
                 class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-                :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*') ? 'text-white' : 'text-boom-gray' }}'">Blog</a>
+                :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Blog</a>
             <a href="{{ route('contact') }}" 
                class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*') ? 'text-white' : 'text-boom-gray' }}'">Contacto</a>
+               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Contacto</a>
             
             <!-- Admin Button -->
             <a href="{{ route('login') }}" 
@@ -52,7 +52,7 @@
         </nav>
         
         <!-- Mobile Menu Button -->
-        <button @click="menuOpen = !menuOpen" class="md:hidden" :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*') ? 'text-white' : 'text-boom-gray' }}'">
+        <button @click="menuOpen = !menuOpen" class="md:hidden" :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">
             <svg x-show="!menuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>

@@ -7,7 +7,7 @@
     {{-- ============================================ --}}
     {{-- CONTACTO --}}
     {{-- ============================================ --}}
-    <section class="bg-boom-orange min-h-screen py-20 px-4 pt-32">
+    <section class="bg-boom-orange py-20 px-4 pt-32">
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 
