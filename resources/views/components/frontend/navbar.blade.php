@@ -7,8 +7,8 @@
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         
         <!-- Logo -->
-        <a href="{{ route('home') }}" class="text-8xl font-script font-bold text-boom-orange">
-            boom! <span class="text-xs font-sans font-normal tracking-widest text-boom-gray">studio</span>
+        <a href="{{ route('home') }}" class="inline-block">
+            <img src="{{ asset('images/logo/logo-naranja.webp') }}" alt="Boom! Studio" class="h-10">
         </a>
         
         <!-- Desktop Menu -->
