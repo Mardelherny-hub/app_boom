@@ -7,7 +7,7 @@
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         
         <!-- Logo -->
-        <a href="{{ route('home') }}" class="text-7xl font-script font-bold text-boom-orange">
+        <a href="{{ route('home') }}" class="text-8xl font-script font-bold text-boom-orange">
             boom! <span class="text-xs font-sans font-normal tracking-widest text-boom-gray">studio</span>
         </a>
         
