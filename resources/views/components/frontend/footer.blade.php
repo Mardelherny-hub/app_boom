@@ -5,8 +5,7 @@
             {{-- Logo y descripción --}}
             <div class="md:col-span-2">
                 <a href="{{ route('home') }}" class="inline-block mb-4">
-                    <span class="text-4xl font-script text-boom-orange">boom!</span>
-                    <span class="text-sm font-medium text-white ml-1">studio</span>
+                    <img src="{{ asset('images/logo/logo-naranja.webp') }}" alt="Boom! Studio" class="h-12">
                 </a>
                 <p class="text-gray-400 leading-relaxed">
                     Somos una agencia creativa con visión comercial, donde el análisis, la estrategia y la comunicación se combinan con diseño, datos y contenido audiovisual.
