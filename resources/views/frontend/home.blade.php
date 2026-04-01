@@ -7,15 +7,15 @@
     {{-- ============================================ --}}
     {{-- HERO - IMAGEN PRINCIPAL --}}
     {{-- ============================================ --}}
-    <section class="relative w-full overflow-hidden">
+    <section class="relative w-full min-h-screen overflow-hidden">
         {{-- Imagen de fondo desktop --}}
         <img src="{{ asset('images/home/banner-principal.webp') }}" 
             alt="Boom Studio - Bienvenido" 
-            class="w-full h-auto hidden md:block">
+            class="w-full h-full min-h-screen object-cover hidden md:block">
         {{-- Imagen de fondo mobile --}}
         <img src="{{ asset('images/home/banner-principal-mobile.webp') }}" 
             alt="Boom Studio - Bienvenido" 
-            class="w-full h-auto md:hidden">
+            class="w-full h-full min-h-screen object-cover md:hidden">
     </section>
     {{-- ============================================ --}}
     {{-- HERO SLIDESHOW --}}
@@ -253,16 +253,16 @@
             
             {{-- Filtros --}}
             <div class="flex flex-wrap gap-4 mb-12 justify-center">
-                <button class="px-6 py-2 rounded-full border-2 border-boom-gray text-boom-gray font-medium hover:bg-boom-gray hover:text-white transition">
+                <button class="px-6 py-2 rounded-full bg-boom-gray text-white font-medium hover:bg-boom-orange transition">
                     Redes Sociales
                 </button>
-                <button class="px-6 py-2 rounded-full border-2 border-boom-gray text-boom-gray font-medium hover:bg-boom-gray hover:text-white transition">
+                <button class="px-6 py-2 rounded-full bg-boom-gray text-white font-medium hover:bg-boom-orange transition">
                     Diseño Gráfico
                 </button>
-                <button class="px-6 py-2 rounded-full border-2 border-boom-gray text-boom-gray font-medium hover:bg-boom-gray hover:text-white transition">
+                <button class="px-6 py-2 rounded-full bg-boom-gray text-white font-medium hover:bg-boom-orange transition">
                     Página Web
                 </button>
-                <button class="px-6 py-2 rounded-full border-2 border-boom-gray text-boom-gray font-medium hover:bg-boom-gray hover:text-white transition">
+                <button class="px-6 py-2 rounded-full bg-boom-gray text-white font-medium hover:bg-boom-orange transition">
                     Publicidad
                 </button>
             </div>
@@ -336,7 +336,7 @@
                             <div class="flex-shrink-0">
                                 <img src="{{ asset('images/home/clientes/' . $i . '.webp') }}" 
                                     alt="Cliente {{ $i }}" 
-                                    class="h-16 md:h-20 object-contain">
+                                    class="h-24 md:h-28 object-contain">
                             </div>
                         @endfor
                     @endfor
@@ -346,7 +346,7 @@
             {{-- Botón --}}
             <div class="text-center">
                 <a href="{{ route('portfolio.index') }}" 
-                class="inline-block border-2 border-white text-white px-8 py-3 px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider hover:bg-boom-orange hover:border-boom-orange hover:text-white transition">
+                class="inline-block bg-white text-boom-blue px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider hover:bg-boom-orange hover:text-white transition">
                     Ver más
                 </a>
             </div>
