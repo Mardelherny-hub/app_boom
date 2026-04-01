@@ -2,44 +2,34 @@
     $menuPages = \App\Domain\Pages\Models\Page::inMenu()->get();
 @endphp
 
-<header class="fixed w-full top-0 z-50 transition-all duration-300" 
-        x-data="{ menuOpen: false, scrolled: false }" 
-        @scroll.window="scrolled = window.pageYOffset > 50"
-        :class="scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'">
+<header class="fixed w-full top-0 z-50 shadow-sm" style="background-color: #FBFAFA;"
+        x-data="{ menuOpen: false }">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         
-        <a href="{{ route('home') }}" class="inline-block">
-            <img x-show="!scrolled" src="{{ asset(request()->routeIs('blog.*') ? 'images/logo/logo-naranja.webp' : 'images/logo/logo-gris.webp') }}" 
-                    alt="boom! studio" class="h-16 w-auto">
-            <img x-show="scrolled" src="{{ asset('images/logo/logo-naranja.webp') }}" 
-                    alt="boom! studio" class="h-16 w-auto">
+        <!-- Logo -->
+        <a href="{{ route('home') }}" class="text-7xl font-script font-bold text-boom-orange">
+            boom! <span class="text-xs font-sans font-normal tracking-widest text-boom-gray">studio</span>
         </a>
         
         <!-- Desktop Menu -->
         <nav class="hidden md:flex items-center space-x-8">
             <a href="{{ route('home') }}" 
-               class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Inicio</a>
+               class="text-sm font-medium uppercase tracking-wide text-boom-gray hover:text-boom-orange transition-colors">Inicio</a>
             <a href="{{ route('services.index') }}" 
-               class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Servicios</a>
+               class="text-sm font-medium uppercase tracking-wide text-boom-gray hover:text-boom-orange transition-colors">Servicios</a>
             <a href="{{ route('portfolio.index') }}" 
-               class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Portfolio</a>
+               class="text-sm font-medium uppercase tracking-wide text-boom-gray hover:text-boom-orange transition-colors">Portfolio</a>
             
             {{-- Páginas dinámicas --}}
             @foreach($menuPages as $menuPage)
             <a href="{{ route('page.show', $menuPage->slug) }}" 
-               class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">{{ $menuPage->title }}</a>
+               class="text-sm font-medium uppercase tracking-wide text-boom-gray hover:text-boom-orange transition-colors">{{ $menuPage->title }}</a>
             @endforeach
             
             <a href="{{ route('blog.index') }}" 
-                class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-                :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Blog</a>
+               class="text-sm font-medium uppercase tracking-wide text-boom-gray hover:text-boom-orange transition-colors">Blog</a>
             <a href="{{ route('contact') }}" 
-               class="text-sm font-medium uppercase tracking-wide hover:text-boom-orange transition-colors"
-               :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">Contacto</a>
+               class="text-sm font-medium uppercase tracking-wide text-boom-gray hover:text-boom-orange transition-colors">Contacto</a>
             
             <!-- Admin Button -->
             <a href="{{ route('login') }}" 
@@ -52,7 +42,7 @@
         </nav>
         
         <!-- Mobile Menu Button -->
-        <button @click="menuOpen = !menuOpen" class="md:hidden" :class="scrolled ? 'text-boom-gray' : '{{ request()->routeIs('blog.*', 'contact') ? 'text-white' : 'text-boom-gray' }}'">
+        <button @click="menuOpen = !menuOpen" class="md:hidden text-boom-gray">
             <svg x-show="!menuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -71,7 +61,8 @@
          x-transition:leave="transition ease-in duration-150"
          x-transition:leave-start="opacity-100 translate-y-0"
          x-transition:leave-end="opacity-0 -translate-y-2"
-         class="md:hidden bg-white/95 backdrop-blur-md border-t px-6 py-4">
+         style="background-color: #FBFAFA;"
+         class="md:hidden border-t border-gray-200 px-6 py-4">
         <nav class="flex flex-col space-y-4">
             <a href="{{ route('home') }}" class="text-sm font-medium uppercase text-boom-gray hover:text-boom-orange">Inicio</a>
             <a href="{{ route('services.index') }}" class="text-sm font-medium uppercase text-boom-gray hover:text-boom-orange">Servicios</a>
