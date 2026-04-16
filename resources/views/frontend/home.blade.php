@@ -518,7 +518,7 @@
             <div class="flex flex-col items-center justify-center">
                 <img src="{{ asset('images/home/contacto-new.webp') }}" 
                     alt="Contacto Boom Studio" 
-                    class="w-full max-w-md rounded-lg mb-8">
+                    class="w-full max-w-sm rounded-lg mb-8">
                 
                 {{-- Datos de contacto --}}
                 <div class="space-y-4 text-white text-center">
