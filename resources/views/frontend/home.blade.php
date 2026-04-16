@@ -366,7 +366,7 @@
                 <div class="flex items-center justify-center">
                     <img src="{{ asset('images/home/blog-mkt.webp') }}" 
                         alt="Blog Marketinero Boom Studio" 
-                        class="w-3/4 rounded-lg">
+                        class="w-full rounded-lg">
                 </div>
                 
                 {{-- Texto DERECHA --}}
@@ -413,7 +413,7 @@
             @if($posts->count() > 0)
             <div class="text-center">
                 <a href="{{ route('blog.index') }}" 
-                class="inline-block border-2 border-boom-orange bg-boom-orange text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider hover:bg-boom-gray hover:border-boom-gray hover:text-white transition">
+                class="inline-block bg-boom-gray text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider hover:bg-white hover:text-boom-orange transition">
                     Ver todas
                 </a>
             </div>
@@ -516,7 +516,7 @@
             </div> -->
             {{-- Imagen Contacto --}}
             <div class="flex flex-col items-center justify-center">
-                <img src="{{ asset('images/home/contacto.webp') }}" 
+                <img src="{{ asset('images/home/contacto-new.webp') }}" 
                     alt="Contacto Boom Studio" 
                     class="w-full max-w-md rounded-lg mb-8">
                 
